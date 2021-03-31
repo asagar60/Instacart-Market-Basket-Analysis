@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<head>
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('https://images.unsplash.com/photo-1578916171728-46686eac8d58?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80');
+    min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 50%
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+div.outer{
+    width:100%;
+    text-align: center;
+}
+div.inner
+{
+    display: inline-block;
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+.title{
+    font-weight: bold;
+    font-size: 24;
+    border-width: 0 0 3px;
+    border-style: solid;
+}
+.legend-title{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+.fieldset-prop{
+    border-color : #808080;
+    border-width: 3px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+</style>
+<body>
+
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+    <div class="w3-display-topmiddle">
+      <h1 class="w3-xxlarge w3-animate-top w3-text-black title">Instacart Product Recommendation Engine</h1>
+      <hr class="w3-border-black" style="margin:auto;width:40%">
+    </div>
+    <div class = "w3-display-container w3-display-middle ">
+        <fieldset class = 'fieldset-prop'>
+            <legend class = "legend-title" >Based on your recent purchases</legend>
+        <div class="btn-toolbar ">
+        {% for key, value in predictions['recommend'].items() %}
+          <button class ="button button1" >{{value}}</button>
+        {% endfor %}
+        </div>
+        </fieldset
+    </div>
+</div>
+
+
+
+</body>
+</html>
