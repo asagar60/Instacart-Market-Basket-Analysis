@@ -60,13 +60,13 @@ class F1Optimizer():
     @staticmethod
     def maximize_expectation(P, pNone=None):
         expectations = F1Optimizer.get_expectations(P, pNone)
-
         ix_max = np.unravel_index(expectations.argmax(), expectations.shape)
         max_f1 = expectations[ix_max]
 
         predNone = True if ix_max[0] == 0 else False
         best_k = ix_max[1]
 
+        
         return best_k, predNone, max_f1
 
     @staticmethod
@@ -78,7 +78,7 @@ class F1Optimizer():
         beta_squared = beta ** 2
         return (1.0 + beta_squared) * tp / ((1.0 + beta_squared) * tp + fp + beta_squared * fn)    
 
-def get_best_prediction(items = None, preds = None, pNone=None):
+def get_best_prediction(items = None, preds = None, pNone=None, showThreshold = False):
     items_preds = sorted(list(zip(items, preds)), key=itemgetter(1), reverse=True)
     P = [p for i,p in items_preds]
     L = [i for i,p in items_preds]
@@ -90,4 +90,8 @@ def get_best_prediction(items = None, preds = None, pNone=None):
     best_prediction = ['None'] if opt[1] else []
     best_prediction += (L[:opt[0]])
     
+    if showThreshold:
+        print("Threshold : P(X) > {:.4f}".format(P[:opt[0]][-1]))
+        print("Maximum F1 : {:.4f}".format(opt[2]))
+
     return ' '.join(list(map(str,best_prediction)))
