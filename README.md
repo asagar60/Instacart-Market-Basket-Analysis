@@ -19,6 +19,7 @@ Part 3:
 - Since all of those files can't be uploaded here, I will leave a project directory structure, incase anyone wants to clone this repo and reproduce results.
 
 The following directory Structure is followed for deployment folder
+
 ![Deployment Folder](./Images/deployment_folder.PNG)
 
 ## Deployed application
