@@ -8,11 +8,11 @@ In this project we will try to solve Kaggle's Instacart Market Basket Analysis p
 
 To know more about the approach, refer my medium blog post,
 
-Part 1:
+Part 1: https://asagar60.medium.com/instacart-market-basket-analysis-part-1-introduction-eda-b08fd8250502
 
-Part 2:
+Part 2: https://asagar60.medium.com/instacart-market-basket-analysis-part-2-fe-modelling-1dc02c2b028b
 
-Part 3: 
+Part 3: https://asagar60.medium.com/instacart-market-basket-analysis-part-3-deployment-ee813520284d
 
 ## Data Files
 - All files used in this project, are generated through Feature Engineering. All py files needed to do this are added to this repo.
